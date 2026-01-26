@@ -16,12 +16,29 @@
             background: linear-gradient(135deg, #f5f1ea 0%, #faf8f3 100%);
             color: #2d3e2d;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(122, 155, 122, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 197, 169, 0.3) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         header {
@@ -31,10 +48,23 @@
             border-radius: 2px;
             margin-bottom: 60px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             font-weight: 300;
             color: #4a6b4a;
             margin-bottom: 15px;
@@ -60,6 +90,14 @@
             margin-bottom: 30px;
             border-radius: 2px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
@@ -80,6 +118,12 @@
             margin: 25px 0;
             padding-left: 30px;
             border-left: 2px solid #7a9b7a;
+            transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            padding-left: 35px;
         }
 
         .time {
@@ -92,6 +136,37 @@
             color: #5d7a5d;
             font-style: italic;
             margin-top: 5px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-placeholder {
+            color: #7a9b7a;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 20px;
         }
 
         .form-group {
@@ -113,12 +188,13 @@
             font-size: 1em;
             font-family: 'Georgia', serif;
             background: #faf8f3;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         input:focus, textarea:focus, select:focus {
             outline: none;
             border-color: #7a9b7a;
+            box-shadow: 0 0 0 3px rgba(122, 155, 122, 0.1);
         }
 
         textarea {
@@ -152,13 +228,14 @@
             border-radius: 2px;
             font-size: 1.1em;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
             font-family: 'Georgia', serif;
             letter-spacing: 1px;
         }
 
         button:hover {
             background: #5d7a5d;
+            transform: translateY(-2px);
         }
 
         .success-message {
@@ -171,6 +248,88 @@
             margin-top: 20px;
         }
 
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+            justify-items: center;
+        }
+
+        .team-member {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-name {
+            color: #4a6b4a;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: #7a9b7a;
+            font-style: italic;
+        }
+
+        .folje-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .folje-member {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .folje-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .folje-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .folje-name {
+            color: #4a6b4a;
+            font-weight: 500;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 25px;
+            line-height: 1.8;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -178,9 +337,9 @@
             font-style: italic;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
             }
             
             .section {
@@ -191,6 +350,32 @@
                 flex-direction: column;
                 gap: 15px;
             }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .folje-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .folje-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -200,6 +385,16 @@
             <h1>Elin <span class="ampersand">&</span> Edvin</h1>
             <p class="date">1 AUGUSTI 2026</p>
         </header>
+
+        <div style="text-align: center; margin: -30px 0 50px 0; padding: 0 20px;">
+            <p style="color: #5d7a5d; font-size: 0.95em; margin-bottom: 8px;">Uppdaterade koordinater:</p>
+            <p style="position: relative; display: inline-block; color: #8b4545; text-decoration: line-through; font-size: 1.1em; margin: 0;">
+                56.0465° N, 12.6945° E
+            </p>
+            <p style="color: #4a6b4a; font-weight: 600; font-size: 1.2em; margin-top: 8px; letter-spacing: 0.5px;">
+                56.0521° N, 12.7103° E
+            </p>
+        </div>
 
         <div class="section">
             <h2>Välkomna till vårt bröllop</h2>
@@ -220,7 +415,7 @@
                     <div class="location">Marielunds herrgård</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="time">18:00</div>
+                    <div class="time">17:30</div>
                     <div>Middag och fest</div>
                     <div class="location">Marielunds herrgård</div>
                 </div>
@@ -228,6 +423,128 @@
         </div>
 
         <div class="section">
+            <h2>Bildgalleri</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Bild 1<br>Kommer snart</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Bild 2<br>Kommer snart</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Bild 3<br>Kommer snart</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Bild 4<br>Kommer snart</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vill du hålla tal?</h2>
+            <p>Vi blir så glada om du vill hedra oss med ett tal under middagen! För att allt ska flyta på smidigt ber vi dig att:</p>
+            <ul>
+                <li>Anmäla ditt tal till våra toastmasters senast <strong>1 juli</strong></li>
+                <li>Hålla talet mellan <strong>3-5 minuter</strong></li>
+                <li>Gärna skicka in ditt tal i förväg så att toastmasters kan planera kvällen</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Kontakta våra toastmasters:</strong><br>
+            Linn Persson & Hampus Olsson</p>
+        </div>
+
+        <div class="section">
+            <h2>Våra Toastmasters</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="team-name">Linn Persson</h3>
+                    <p class="team-role">Toastmaster</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="team-name">Hampus Olsson</h3>
+                    <p class="team-role">Toastmaster</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Följet</h2>
+            <div class="folje-grid">
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Frida Hermansson</p>
+                </div>
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Kim Larsson</p>
+                </div>
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Jenny Forsén</p>
+                </div>
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Eric Marcus</p>
+                </div>
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Niklas Ydebäck</p>
+                </div>
+                <div class="folje-member">
+                    <div class="folje-avatar">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <p class="folje-name">Alexander Karlsson</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 2px;">
+                <div style="background: #8b4545; color: white; padding: 20px 40px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center;">
+                    <p style="font-size: 1.2em; margin: 0; letter-spacing: 0.5px;">OSA-formuläret kommer snart!</p>
+                    <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">Vi arbetar på att koppla det till vårt system.</p>
+                </div>
+            </div>
             <h2>OSA</h2>
             <p style="margin-bottom: 25px;">Vänligen bekräfta ditt deltagande senast den 1 juni 2026.</p>
             
@@ -284,10 +601,52 @@
         </div>
 
         <div class="section">
+            <h2>Vigseln</h2>
+            <p>Vigseln äger rum i Mörarps kyrka klockan 15:00. Efter vigseln beger vi oss till Marielunds herrgård för mingel och fest.</p>
+            <p style="margin-top: 15px;"><strong>OBS!</strong> Egen transport krävs mellan kyrkan och herrgården. Restiden är cirka 6 minuter. Vi rekommenderar att samåka om möjligt.</p>
+        </div>
+
+        <div class="section">
+            <h2>Boende</h2>
+            <p>Det finns goda boendealternativ i närområdet:</p>
+            <ul>
+                <li><strong>Helsingborgs centrum:</strong> Cirka 15 minuter med bil</li>
+                <li><strong>Ängelholm:</strong> Cirka 20 minuter med bil</li>
+            </ul>
+            <p style="margin-top: 15px;">Vi skickar ut konkreta hotellrekommendationer efter att vi fått in er OSA.</p>
+        </div>
+
+        <div class="section">
+            <h2>Gåvor</h2>
+            <p>Er närvaro på vår stora dag är den finaste gåvan vi kan få! Om ni ändå vill ge oss något, skulle vi uppskatta ett bidrag till vår bröllopsresa eller en upplevelse vi kan dela tillsammans.</p>
+            <p style="margin-top: 15px; font-style: italic; color: #5d7a5d;">Mer information om detta kommer närmare bröllopsdagen.</p>
+        </div>
+
+        <div class="section">
+            <h2>Barn</h2>
+            <p>Vi älskar barn! Men efter att ha umgåtts med dem varje dag på jobbet längtar bruden efter en kväll där hon inte behöver räkna huvuden, torka tårar eller förhandla om när det är dags att gå hem. Vi hoppas därför att de minsta får en mysig kväll hemma denna gång. Tack för er förståelse! 😊</p>
+            <p style="margin-top: 15px; font-style: italic; color: #5d7a5d;">De allra minsta som fortfarande är i behov av sin mamma får givetvis delta.</p>
+        </div>
+
+        <div class="section">
+            <h2>Dresscode</h2>
+            <p style="margin-bottom: 20px;">Vi önskar att ni klär er i <strong>mörk kostym</strong>.</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="max-width: 400px; margin: 0 auto; padding: 60px 40px; background: linear-gradient(135deg, #2d3e2d 0%, #1a2a1a 100%); border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#e8dcc4" stroke-width="1" style="margin-bottom: 20px;">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        <path d="M12 7v10"/>
+                        <path d="M9 12h6"/>
+                    </svg>
+                    <p style="color: #e8dcc4; font-size: 1.2em; margin: 0;">Mörk kostym</p>
+                    <p style="color: #d4c5a9; font-size: 0.95em; margin-top: 10px; font-style: italic;">Elegans i mörka toner</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
             <h2>Praktisk information</h2>
-            <p><strong>Dresscode:</strong> Kavaj</p>
             <p><strong>Parkering:</strong> Finns vid Marielunds herrgård</p>
-            <p><strong>Boende:</strong> Rekommendationer skickas ut efter OSA</p>
             <p><strong>Frågor?</strong> Kontakta oss på brollop@elinedvin.se</p>
         </div>
 
@@ -298,6 +657,23 @@
     </div>
 
     <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
         const form = document.getElementById('rsvpForm');
         const successMessage = document.getElementById('successMessage');
 
@@ -323,10 +699,7 @@
                 successMessage.style.display = 'none';
             }, 5000);
             
-            window.scrollTo({
-                top: successMessage.offsetTop - 100,
-                behavior: 'smooth'
-            });
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
 </body>
