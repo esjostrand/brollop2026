@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elin & Edvin - 1 Augusti 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f1ea 0%, #faf8f3 100%);
+            color: #2d3e2d;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
+            border-radius: 2px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            color: #4a6b4a;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .ampersand {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #7a9b7a;
+        }
+
+        .date {
+            font-size: 1.3em;
+            color: #5d7a5d;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 2px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #4a6b4a;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e8dcc4;
+            padding-bottom: 10px;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin: 25px 0;
+            padding-left: 30px;
+            border-left: 2px solid #7a9b7a;
+        }
+
+        .time {
+            font-weight: bold;
+            color: #4a6b4a;
+            font-size: 1.1em;
+        }
+
+        .location {
+            color: #5d7a5d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin: 25px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a6b4a;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4c5a9;
+            border-radius: 2px;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            background: #faf8f3;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #7a9b7a;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0;
+        }
+
+        .radio-group input[type="radio"] {
+            width: auto;
+            margin: 0;
+        }
+
+        button {
+            background: #4a6b4a;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 2px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: #5d7a5d;
+        }
+
+        .success-message {
+            display: none;
+            background: #7a9b7a;
+            color: white;
+            padding: 20px;
+            border-radius: 2px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #5d7a5d;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Elin <span class="ampersand">&</span> Edvin</h1>
+            <p class="date">1 AUGUSTI 2026</p>
+        </header>
+
+        <div class="section">
+            <h2>Välkomna till vårt bröllop</h2>
+            <p>Vi är glada att bjuda in er till att fira vår kärleks dag tillsammans med oss. Det kommer att bli en dag fylld av glädje, kärlek och minnen för livet.</p>
+        </div>
+
+        <div class="section">
+            <h2>Program</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">14:00</div>
+                    <div>Vigsel</div>
+                    <div class="location">Mörarps kyrka, Helsingborg</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">15:30</div>
+                    <div>Mingel och fotografering</div>
+                    <div class="location">Marielunds herrgård</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">17:00</div>
+                    <div>Middag och fest</div>
+                    <div class="location">Marielunds herrgård</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>OSA</h2>
+            <p style="margin-bottom: 25px;">Vänligen bekräfta ditt deltagande senast den 1 juni 2026.</p>
+            
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Namn *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-post *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Kommer du? *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="attending" value="ja" required> Ja, med glädje!
+                        </label>
+                        <label>
+                            <input type="radio" name="attending" value="nej" required> Nej, tyvärr
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Antal gäster (inklusive dig själv) *</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Välj antal</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary">Allergier eller specialkost?</label>
+                    <textarea id="dietary" name="dietary" placeholder="T.ex. vegetarian, glutenfri, nötallergier..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Hälsning till brudparet</label>
+                    <textarea id="message" name="message" placeholder="Skriv en hälsning till oss..."></textarea>
+                </div>
+
+                <button type="submit">Skicka OSA</button>
+                
+                <div class="success-message" id="successMessage">
+                    Tack för din OSA! Vi ser fram emot att fira tillsammans med dig.
+                </div>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Praktisk information</h2>
+            <p><strong>Dresscode:</strong> Kavaj</p>
+            <p><strong>Parkering:</strong> Finns vid Marielunds herrgård</p>
+            <p><strong>Boende:</strong> Rekommendationer skickas ut efter OSA</p>
+            <p><strong>Frågor?</strong> Kontakta oss på brollop@elinedvin.se</p>
+        </div>
+
+        <footer>
+            <p>Vi ser fram emot att dela denna speciella dag med er</p>
+            <p>♥</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('rsvpForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                attending: document.querySelector('input[name="attending"]:checked').value,
+                guests: document.getElementById('guests').value,
+                dietary: document.getElementById('dietary').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            console.log('OSA skickad:', formData);
+            
+            successMessage.style.display = 'block';
+            form.reset();
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+            
+            window.scrollTo({
+                top: successMessage.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
