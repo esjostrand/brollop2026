@@ -25,13 +25,26 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.08;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M20,100 Q50,50 100,20 Q150,50 180,100" fill="none" stroke="%234a6b4a" stroke-width="2" opacity="0.15"/><ellipse cx="60" cy="80" rx="25" ry="40" fill="%237a9b7a" opacity="0.12" transform="rotate(-30 60 80)"/><ellipse cx="140" cy="80" rx="30" ry="45" fill="%237a9b7a" opacity="0.1" transform="rotate(30 140 80)"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.6;
             z-index: -1;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(122, 155, 122, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 197, 169, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M180,100 Q150,150 100,180 Q50,150 20,100" fill="none" stroke="%234a6b4a" stroke-width="2" opacity="0.15"/><ellipse cx="140" cy="120" rx="35" ry="50" fill="%237a9b7a" opacity="0.12" transform="rotate(25 140 120)"/><ellipse cx="60" cy="120" rx="28" ry="42" fill="%237a9b7a" opacity="0.1" transform="rotate(-25 60 120)"/><ellipse cx="100" cy="150" rx="30" ry="45" fill="%23d4c5a9" opacity="0.08" transform="rotate(10 100 150)"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.6;
+            z-index: -1;
             pointer-events: none;
         }
 
@@ -460,26 +473,11 @@
 
         <div class="section">
             <h2>Våra Toastmasters</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-avatar">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="team-name">Linn Persson</h3>
-                    <p class="team-role">Toastmaster</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="team-name">Hampus Olsson</h3>
-                    <p class="team-role">Toastmaster</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="toast.jpg" alt="Linn Persson & Hampus Olsson" style="max-width: 500px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                <div style="margin-top: 20px;">
+                    <h3 style="color: #4a6b4a; font-size: 1.2em; margin-bottom: 5px;">Linn Persson & Hampus Olsson</h3>
+                    <p style="color: #7a9b7a; font-style: italic;">Toastmasters</p>
                 </div>
             </div>
         </div>
@@ -489,49 +487,37 @@
             <div class="folje-grid">
                 <div class="folje-member">
                     <div class="folje-avatar">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+                        <img src="frida.jpg" alt="Frida Hermansson" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                     </div>
                     <p class="folje-name">Frida Hermansson</p>
                 </div>
                 <div class="folje-member">
                     <div class="folje-avatar">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+                        <img src="kim.jpg" alt="Kim Larsson" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                     </div>
                     <p class="folje-name">Kim Larsson</p>
                 </div>
                 <div class="folje-member">
                     <div class="folje-avatar">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a6b4a" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+                        <img src="jenny.jpg" alt="Jenny Forsén" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                     </div>
                     <p class="folje-name">Jenny Forsén</p>
                 </div>
                 <div class="folje-member">
                     <div class="folje-avatar">
                         <img src="eric.jpg" alt="Eric Marcus" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                        </svg>
                     </div>
                     <p class="folje-name">Eric Marcus</p>
                 </div>
                 <div class="folje-member">
                     <div class="folje-avatar">
                         <img src="nicke.jpg" alt="Niklas Ydebäck" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                        </svg>
                     </div>
                     <p class="folje-name">Niklas Ydebäck</p>
                 </div>
                 <div class="folje-member">
                     <div class="folje-avatar">
                         <img src="ak.jpg" alt="Alexander Karlsson" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                        </svg>
                     </div>
                     <p class="folje-name">Alexander Karlsson</p>
                 </div>
