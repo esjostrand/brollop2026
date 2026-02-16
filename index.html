@@ -328,8 +328,8 @@
         }
 
         .folje-avatar {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%);
             display: flex;
@@ -402,7 +402,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="E&E.png" alt="Elin & Edvin">
+            <img src="Eoe.jpeg" alt="Elin & Edvin">
         </header>
 
         <div style="text-align: center; margin: -30px 0 50px 0; padding: 0 20px;">
@@ -429,7 +429,7 @@
                     <div class="location">Mörarps kyrka, Helsingborg</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="time">16:30</div>
+                    <div class="time">16:15</div>
                     <div>Mingel och fotografering</div>
                     <div class="location">Marielunds herrgård</div>
                 </div>
@@ -442,39 +442,22 @@
         </div>
 
         <div class="section">
-            <h2>Bildgalleri</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">Bild 1<br>Kommer snart</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">Bild 2<br>Kommer snart</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">Bild 3<br>Kommer snart</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">Bild 4<br>Kommer snart</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
             <h2>Vill du hålla tal?</h2>
             <p>Vi blir så glada om du vill hedra oss med ett tal under middagen! För att allt ska flyta på smidigt ber vi dig att:</p>
             <ul>
                 <li>Anmäla ditt tal till våra toastmasters senast <strong>1 juli</strong></li>
-                <li>Hålla talet mellan <strong>3-5 minuter</strong></li>
+                <li>Hålla talet i <strong>3 minuter</strong></li>
                 <li>Gärna skicka in ditt tal i förväg så att toastmasters kan planera kvällen</li>
             </ul>
-            <p style="margin-top: 20px;"><strong>Kontakta våra toastmasters:</strong><br>
-            Linn Persson & Hampus Olsson</p>
+            <p style="margin-top: 20px;"><strong>Anmälan till tal:</strong><br>
+            E-post: <a href="mailto:linnpson@gmail.com" style="color: #4a6b4a;">linnpson@gmail.com</a><br>
+            Telefon: <a href="tel:0760282141" style="color: #4a6b4a;">076-028 21 41</a></p>
         </div>
 
         <div class="section">
             <h2>Våra Toastmasters</h2>
             <div style="text-align: center; margin: 30px 0;">
-                <img src="toast.jpeg" alt="Linn Persson & Hampus Olsson" style="max-width: 500px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                <img src="toast.jpeg" alt="Linn Persson & Hampus Olsson" style="max-width: 250px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
                 <div style="margin-top: 20px;">
                     <h3 style="color: #4a6b4a; font-size: 1.2em; margin-bottom: 5px;">Linn Persson & Hampus Olsson</h3>
                     <p style="color: #7a9b7a; font-style: italic;">Toastmasters</p>
@@ -524,66 +507,14 @@
             </div>
         </div>
 
-        <div class="section" style="position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 2px;">
-                <div style="background: #8b4545; color: white; padding: 20px 40px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center;">
-                    <p style="font-size: 1.2em; margin: 0; letter-spacing: 0.5px;">OSA-formuläret kommer snart!</p>
-                    <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">Vi arbetar på att koppla det till vårt system.</p>
-                </div>
-            </div>
+        <div class="section">
             <h2>OSA</h2>
             <p style="margin-bottom: 25px;">Vänligen bekräfta ditt deltagande senast den 1 juni 2026.</p>
+            <p style="margin-bottom: 25px; font-weight: 500; color: #4a6b4a;"><strong>OBS!</strong> Varje deltagare ska fylla i ett eget OSA-svar.</p>
             
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <label for="name">Namn *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-post *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Kommer du? *</label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="attending" value="ja" required> Ja, med glädje!
-                        </label>
-                        <label>
-                            <input type="radio" name="attending" value="nej" required> Nej, tyvärr
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="guests">Antal gäster (inklusive dig själv) *</label>
-                    <select id="guests" name="guests" required>
-                        <option value="">Välj antal</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="dietary">Allergier eller specialkost?</label>
-                    <textarea id="dietary" name="dietary" placeholder="T.ex. vegetarian, glutenfri, nötallergier..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Hälsning till brudparet</label>
-                    <textarea id="message" name="message" placeholder="Skriv en hälsning till oss..."></textarea>
-                </div>
-
-                <button type="submit">Skicka OSA</button>
-                
-                <div class="success-message" id="successMessage">
-                    Tack för din OSA! Vi ser fram emot att fira tillsammans med dig.
-                </div>
-            </form>
+            <div style="text-align: center;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlYE38xBy0D0_qiD9kXz4PCvcuNgP6go14R_zsE-4A3vy-yA/viewform?usp=header" target="_blank" style="display: inline-block; background: #4a6b4a; color: white; padding: 15px 40px; border-radius: 2px; font-size: 1.1em; text-decoration: none; transition: background 0.3s, transform 0.2s; font-family: 'Georgia', serif; letter-spacing: 1px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">Fyll i OSA</a>
+            </div>
         </div>
 
         <div class="section">
@@ -594,6 +525,7 @@
 
         <div class="section">
             <h2>Boende</h2>
+            <p style="background: rgba(232, 220, 196, 0.4); padding: 15px; border-radius: 4px; border-left: 3px solid #7a9b7a; margin-bottom: 20px;"><strong>Tips:</strong> Boka i god tid! Den helgen pågår både en stor fotbollscup i Helsingborg och Miss Li spelar konsert, vilket kan påverka tillgängligheten på hotell.</p>
             <p>Det finns goda boendealternativ i närområdet:</p>
             <ul>
                 <li><strong>Helsingborgs centrum:</strong> Cirka 15 minuter med bil</li>
@@ -618,22 +550,14 @@
             <h2>Dresscode</h2>
             <p style="margin-bottom: 20px;">Vi önskar att ni klär er i <strong>mörk kostym</strong>.</p>
             <div style="text-align: center; margin: 30px 0;">
-                <div style="max-width: 400px; margin: 0 auto; padding: 60px 40px; background: linear-gradient(135deg, #2d3e2d 0%, #1a2a1a 100%); border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#e8dcc4" stroke-width="1" style="margin-bottom: 20px;">
-                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        <path d="M12 7v10"/>
-                        <path d="M9 12h6"/>
-                    </svg>
-                    <p style="color: #e8dcc4; font-size: 1.2em; margin: 0;">Mörk kostym</p>
-                    <p style="color: #d4c5a9; font-size: 0.95em; margin-top: 10px; font-style: italic;">Elegans i mörka toner</p>
-                </div>
+                <img src="code.jpeg" alt="Mörk kostym" style="max-width: 400px; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
             </div>
         </div>
 
         <div class="section">
             <h2>Praktisk information</h2>
-            <p><strong>Parkering:</strong> Finns vid Marielunds herrgård</p>
-            <p><strong>Frågor?</strong> Kontakta oss på brollop@elinedvin.se</p>
+            <p><strong>Parkering:</strong> Finns vid Marielunds herrgård. Bilen kan stå kvar över natten.</p>
+            <p><strong>Frågor?</strong> Kontakta Edvin på <a href="tel:0708801401" style="color: #4a6b4a;">070-880 14 01</a></p>
         </div>
 
         <footer>
@@ -658,34 +582,6 @@
 
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
-        });
-
-        const form = document.getElementById('rsvpForm');
-        const successMessage = document.getElementById('successMessage');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                attending: document.querySelector('input[name="attending"]:checked').value,
-                guests: document.getElementById('guests').value,
-                dietary: document.getElementById('dietary').value,
-                message: document.getElementById('message').value,
-                timestamp: new Date().toISOString()
-            };
-            
-            console.log('OSA skickad:', formData);
-            
-            successMessage.style.display = 'block';
-            form.reset();
-            
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-            
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
 </body>
